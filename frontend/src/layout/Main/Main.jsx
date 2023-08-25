@@ -10,6 +10,7 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import Features from '../../components/Sections/Features'
 
 const Main = () => {
   return (
@@ -41,6 +42,8 @@ const Main = () => {
           </Swiper>
         </section>
       </main>
+
+      <Features/>
       <ProductDay />
       <CardSlider />
 

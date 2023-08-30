@@ -14,7 +14,7 @@ export default {
       },
       colors: {
         marronCustom: 'var(--marron-custom)',
-        // greenCustom: 'var(--green-custom)',
+        greenCustom: 'var(--green-custom)',
         greenCustom2: 'var(--green-custom2)',
         oranjeCustom: 'var(--oranje-custom)',
         blackCustom: 'var(--black-custom)',

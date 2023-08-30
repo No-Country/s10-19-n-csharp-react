@@ -12,7 +12,7 @@ function Login () {
   }
 
   const styledLabel = 'text-sm   mb-0.5 mt-2 text-gray-600'
-  const styledErros = 'text-xs text-red-500 ml-9 mt-0.5 mb-0.5 '
+  const styledErros = 'text-xs text-red-500  mt-0.5  '
   const styledInput = 'form-control w-4/5 bg-whiteBackgraundForm2 mx-auto  px-2 py-1.5 text-gray-900 rounded border border-solid border-gray-300 focus:border-gray-200 fouces:outline-none'
 
   return (
@@ -31,8 +31,8 @@ function Login () {
                 </div>
 
                 <input className={styledInput} type='text' {...register('email', { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })} />
-                {errors.email?.type === 'required' && <div className='w-4/5 flex items-start mx-auto'> <p className={styledErros}>Este campo es obligatorio</p></div>}
-                {errors.email?.type === 'pattern' && <div className='w-4/5 flex items-start mx-auto'><p className={styledErros}>Ingresa un email valido</p></div>}
+                {errors.email?.type === 'required' && <div className='flex items-start w-4/5 px-1 mx-auto mt-1.5'> <p className={styledErros}>Este campo es obligatorio</p></div>}
+                {errors.email?.type === 'pattern' && <div className='flex items-start w-4/5 px-1 mx-auto mt-1.5'><p className={styledErros}>Ingresa un email valido</p></div>}
 
               </div>
               <div className='flex flex-col w-full  m-0 items-start p-auto'>
@@ -42,7 +42,7 @@ function Login () {
                 </div>
 
                 <input className={styledInput} type='password' {...register('password', { required: true })} />
-                {errors.password?.type === 'required' && <p className={styledErros}>Este campo es obligatorio</p>}
+                {errors.password?.type === 'required' && <div className='flex items-start w-4/5 px-1 mx-auto mt-1.5'> <p className={styledErros}>Este campo es obligatorio</p></div>}
 
               </div>
               <div className='flex mt-3'>

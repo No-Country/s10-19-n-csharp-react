@@ -1,10 +1,11 @@
 const { Category } = require('../db/models/category.model');
 const { Meals } = require('../db/models/meal.model');
+const { Restaurant } = require('../db/models/restaurant.model');
 
 const getMeals = async (req, res) => {
   try {
     const meals = await Meals.findAll({
-      include: [{ model: Category, attributes: ['name'] }],
+      include: [{ model: Category, attributes: ['name']}, {model: Restaurant, attributes:['name']}]
     });
     res.status(200).json(meals);
   } catch (err) {
@@ -20,7 +21,7 @@ const getMealsByQuery = async (req, res) => {
     const meals = await Meals.findAll({
       where: { [key]: value },
 
-      include: [{ model: Category, attributes: ['name'] }],
+      include: [{ model: Category, attributes: ['name']}, {model: Restaurant, attributes:['name']}]
     });
     res.status(200).json(meals);
   } catch (err) {
@@ -33,7 +34,7 @@ const getMeal = async (req, res) => {
   const { id } = req.params;
   try {
     const meal = await Meals.findByPk(id, {
-      include: [{ model: Category, attributes: ['name'] }],
+      include: [{ model: Category, attributes: ['name']}, {model: Restaurant, attributes:['name']}]
     });
 
     meal ? res.status(200).json(meal) : res.status(404).send('Meal not found');

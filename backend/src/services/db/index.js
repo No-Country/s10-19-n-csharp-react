@@ -6,10 +6,10 @@ const dbInitializer = async () => {
   await sequelize.authenticate();
   console.log('Connection has been established successfully.');
   await sequelize
-    // .sync({ alter: true })
-    .sync({ force: true })
+    .sync({ alter: true })
+    // .sync({ force: true })
     .then(() => {
-      loadSeeds()
+      // loadSeeds()
       console.log('sincronizacion completada');
     })
     .catch((err) => {
